@@ -6,8 +6,7 @@ Created on Fri Dec  1 14:47:27 2017
 """
 import numpy as np
 
-from keras.models import Sequential												 #import Sequential(DNN很好擴充的基礎模型)
-from keras.layers.embeddings import Embedding
+
 def find_Trigrams(input_list):
     return zip(input_list, input_list[1:], input_list[2:])
 
@@ -35,10 +34,7 @@ with open(path+'doc_list.txt','r' ) as L:
                 listOfWords.append(temp[i])  #listOfwords為該doc的全文字串(分割到 list中)_
                 #print("Doc: ", line0, "words",listOfWords)
                 
-            for each in find_Trigrams(listOfWords): #存成一個documents 文件集 {doc:{字:字數}}
+            for each in find_Trigrams(listOfWords): #將數對(1,2,3)存入list中
                 LIST.append(each)
             
-            #length = len(result)
-            #總文件數量
-      #          numpy.array([for word in result])
-            
+     
